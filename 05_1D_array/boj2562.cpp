@@ -13,7 +13,7 @@ int main() {
     int biggest = arr[0], index;
     for(int i=0;i<9;++i)
     {
-        if(arr[i]>biggest)
+        if(arr[i]>=biggest)
         {
             biggest = arr[i];
             index = i+1;

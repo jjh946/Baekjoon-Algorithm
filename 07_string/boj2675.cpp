@@ -1,6 +1,5 @@
 #include <iostream>
 #include <string>
-#include <array>
 
 using namespace std;
 
@@ -9,7 +8,7 @@ int main()
     int n;
     cin >> n;
 
-    char s[n][8*20];
+    char s[n][8*20+1];
     for(int i=0;i<n;++i){
         int mul;
         string str1;

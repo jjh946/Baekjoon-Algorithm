@@ -23,22 +23,32 @@ int main()
         alpha[letter]++;
     }
     
-    int largest=0, same;
+    int idx=0, max;  //최대값과 알파벳 번호
+    bool overlap = false;   //머리가 안돌아가면 그냥 따라가보도록 하자.
+    
+    max = -1;
+
     for(int i=0;i<26;++i){
 
-        if(alpha[i]>alpha[largest]){
-            largest = i;
+        if(alpha[i]>max){
+         // printf("%d %d %d %d\n",i,largest,alpha[i],alpha[largest] );
+            max = alpha[i];
+            idx = i;
+            overlap = false;
+        
         }
-        else if(alpha[i]==alpha[largest]){
-            same = largest;
+        else if(alpha[i]==max){
+            //printf("same: %d ~ %d %d %d %d\n",same, i,largest,alpha[i],alpha[largest] );
+            overlap = true;
+            
         }
     }
 
-    if(largest==same){
+    if(overlap){
         cout << '?';
     }
     else{
-        char charValue = largest + 'A';
+        char charValue = idx + 'A';
         cout << charValue;
     }
         
